@@ -20,7 +20,7 @@ await connectCloudinary();
 
 
 // allow multiple origins
-const allowedOrigins = ["http://localhost:4000", "http://localhost:5173"]
+const allowedOrigins = ["http://localhost:4000", "http://localhost:5173", "https://project-ruddy-iota.vercel.app"]
 
 app.post('/stripe', express.raw({type: 'application/json'}),stripeWebhooks);
 
