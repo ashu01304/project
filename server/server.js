@@ -20,8 +20,10 @@ await connectCloudinary();
 
 
 // allow multiple origins
-const allowedOrigins = ["http://localhost:4000", "http://localhost:5173", "https://project-ruddy-iota.vercel.app", "https://project-ruddy-iota.vercel.app", "project-kc6bdqqdc-aashutosh-gandhis-projects.vercel.app"]
-
+const allowedOrigins = [
+    "http://localhost:5173",                      // For local development
+    "https://project-ruddy-iota.vercel.app"       // Your deployed frontend URL
+];
 app.post('/stripe', express.raw({type: 'application/json'}),stripeWebhooks);
 
 // Middleware configuration
