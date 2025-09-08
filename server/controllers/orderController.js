@@ -122,7 +122,7 @@ export const stripeWebhooks = async (req, res) => {
             process.env.STRIPE_WEBHOOK_SECRET
         )
     } catch (error) {
-        response.status(400).send(`Webhook Error: ${error.message}`);
+        res.status(400).send(`Webhook Error: ${error.message}`);
     }
     // handle the event
     switch (event.type) {
@@ -155,7 +155,7 @@ export const stripeWebhooks = async (req, res) => {
         default:
             console.error(`Unhandled event type ${event.type}`);
     }
-    response.json({ received: true });
+    res.json({ received: true });
 }
 
 // get orders by user ID : /api/order/user
